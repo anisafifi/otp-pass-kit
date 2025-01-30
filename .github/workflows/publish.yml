@@ -1,0 +1,30 @@
+name: Publish to NPM
+
+on:
+  push:
+    branches:
+      - main  # Replace with your default branch if different
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'  # Specify the version of Node.js you want
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build package (if needed)
+      run: npm run build  # Replace this with your build script if necessary
+
+    - name: Publish to npm
+      run: npm publish --access public  # Add --access public if your package is public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

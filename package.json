@@ -1,0 +1,26 @@
+{
+  "name": "@anisafifi/otp-pass-kit",
+  "description": "A package that will generate secure and safe OTP and password seamlessly",
+  "version": "0.0.1",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "homepage": "https://github.com/anisafifi/otp-pass-kit",
+  "repository": {
+    "url": "https://github.com/anisafifi/otp-pass-kit"
+  },
+  "keywords": [
+    "OTP",
+    "password",
+    "Generator"
+  ],
+  "author": "Anis Afifi",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3"
+  }
+}
