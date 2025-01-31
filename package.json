@@ -1,14 +1,11 @@
 {
   "name": "@anisafifi/otp-pass-kit",
   "description": "A package that will generate secure and safe OTP and password seamlessly",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "homepage": "https://github.com/anisafifi/otp-pass-kit",
-  "repository": {
-    "url": "https://github.com/anisafifi/otp-pass-kit"
-  },
+  "homepage": "https://codewithafifi.com/tools/otp-pass-kit/",
   "keywords": [
     "OTP",
     "password",
