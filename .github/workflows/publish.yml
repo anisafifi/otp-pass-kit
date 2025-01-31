@@ -3,7 +3,7 @@ name: Publish to NPM
 on:
   push:
     branches:
-      - main  # Replace with your default branch if different
+      - main
 
 jobs:
   publish:
@@ -16,15 +16,20 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '20'  # Specify the version of Node.js you want
+        node-version: '20'
+        registry-url: 'https://registry.npmjs.org/'
+        always-auth: true
 
     - name: Install dependencies
       run: npm install
 
-    - name: Build package (if needed)
-      run: npm run build  # Replace this with your build script if necessary
+    - name: Build package
+      run: npm run build  # If you have a build step
+
+    - name: Authenticate with NPM
+      run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
 
     - name: Publish to npm
-      run: npm publish --access public  # Add --access public if your package is public
+      run: npm publish --access public
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
